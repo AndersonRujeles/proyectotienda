@@ -759,7 +759,10 @@ footer {
     background-position: center top;
     background-size: cover;
 }
-
+.banner-four {
+    background-position: center top;
+    background-size: cover;
+}
 .banner-cover {
     background-image: url(../img/reloj4.jpg);
     height: 100vh;
@@ -779,8 +782,8 @@ footer {
     position: relative;
 }
 .banner-four {
-    background-image: url(../img/produreloj.jpg);
-    height: 100vh;
+    background-image: url(../img/login.jpg);
+    height: 50vh;
     margin-bottom: 1rem;
     position: relative;
 }
@@ -1250,7 +1253,7 @@ footer {
     text-transform: uppercase;
     text-align: center;
     cursor: pointer;
-    background: #FFFF00;
+    background: rgb(100, 212, 207);
 }
 
 .btn-default {
