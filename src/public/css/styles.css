@@ -729,8 +729,13 @@ footer {
     background-size: cover;
 }
 
+.banner-three {
+    background-position: center top;
+    background-size: cover;
+}
+
 .banner-cover {
-    background-image: url(../img/reloj4.jpg);
+    background-image: url(../img/produreloj.jpg);
     height: 50vh;
 }
 
@@ -761,13 +766,45 @@ footer {
 }
 
 .banner-second {
-    background-image: url(../img/reloj4.jpg);
+    background-image: url(../img/produreloj.jpg);
+    height: 50vh;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.banner-three {
+    background-image: url(../img/registro.png);
+    height: 55vh;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.banner-four {
+    background-image: url(../img/produreloj.jpg);
     height: 100vh;
     margin-bottom: 1rem;
     position: relative;
 }
 
+
+
 .banner-second::before {
+    content: "";
+    background: #000000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.banner-three::before {
+    content: "";
+    background: #000000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+.banner-four::before {
     content: "";
     background: #000000;
     position: absolute;
@@ -1015,15 +1052,16 @@ footer {
     border: var(--border-dark-light);
     width: 100%;
     outline: none;
+    
 }
-
 .form-control-field {
     border: 1px solid var(--dark-light);
+    display: flex;
     padding: 0.5rem;
-    width: 100%;
+    width: 50%;
     outline: none;
+    
 }
-
 .error {
     border: 1px solid #bb5465;
     background: #fcf8f9;
@@ -1031,6 +1069,7 @@ footer {
 
 .form-control input {
     margin-bottom: 2rem;
+
 }
 
 .ads {
