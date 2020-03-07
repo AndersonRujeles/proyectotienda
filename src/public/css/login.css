@@ -17,7 +17,7 @@
   
   .app-title {
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgb(48, 127, 180);
   }
   
   .login-form {
@@ -29,8 +29,8 @@
   
   input {
   text-align: center;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid transparent;
+  background-color: rgba(214, 210, 210, 0.397);
+  border: 1px solid;
   border-radius: 3px;
   font-size: 16px;
   font-weight: 200;
@@ -41,7 +41,7 @@
   }
   
   input:focus {
-  border: 2px solid #ffffff;
+  border: 2px solid #3498DB;
   box-shadow: none;
   }
   
@@ -63,7 +63,7 @@
   }
   
   .btn2:hover {
-    background-color: rgb(47, 114, 133);
+    background-color: rgb(39, 107, 126);
   }
   
 
