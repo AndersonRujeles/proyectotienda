@@ -36,8 +36,10 @@ for (var i = 0; i < submenu.length; i++) {
 
 // script del slider de producto
 let activeImg = 0
+let activereloj2 = 0
 function slider(n) {
-    let images = document.getElementsByClassName("slider-item")
+    let images = document.getElementsByClassName("slider-item");
+    let reloj2 = document.getElementByClassName("reloj2");
 
     for (i = 0; i < images.length; i++) {
 
@@ -47,25 +49,52 @@ function slider(n) {
             break
         }
     }
+    for (i = 0; i < reloj2.length; i++) {
+
+        if (reloj2[i].className.includes("active")) {
+            reloj2[i].className = reloj2[i].className.replace("active", "")
+
+            break
+        }
+    }
 
     activeImg = n
+    activereloj2 = n
     images[n].className += " active"
+    reloj2[n].className += " active"
 }
 
+
+
+
+
+
+
 function next() {
+    activereloj2++
     activeImg++
     if (activeImg > 2) {
         activeImg = 0
     }
+    if(activereloj2 > 2){
+        activereloj2 = 0
+    }
     slider(activeImg)
+    slider(activereloj2)
 }
+
+
 
 function previus() {
     activeImg--
     if (activeImg < 0) {
         activeImg = 2
     }
+    if(activereloj2 < 0){
+        activereloj2 = 2
+    }
     slider(activeImg)
+    slider(activereloj2)
 }
 
 
