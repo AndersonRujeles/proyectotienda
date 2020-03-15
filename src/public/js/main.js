@@ -39,7 +39,7 @@ let activeImg = 0
 let activereloj2 = 0
 function slider(n) {
     let images = document.getElementsByClassName("slider-item");
-    let reloj2 = document.getElementByClassName("reloj2");
+    
 
     for (i = 0; i < images.length; i++) {
 
