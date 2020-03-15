@@ -36,7 +36,7 @@ for (var i = 0; i < submenu.length; i++) {
 
 // script del slider de producto
 let activeImg = 0
-let activereloj2 = 0
+
 function slider(n) {
     let images = document.getElementsByClassName("slider-item");
     
@@ -49,38 +49,23 @@ function slider(n) {
             break
         }
     }
-    for (i = 0; i < reloj2.length; i++) {
-
-        if (reloj2[i].className.includes("active")) {
-            reloj2[i].className = reloj2[i].className.replace("active", "")
-
-            break
-        }
-    }
+    
 
     activeImg = n
-    activereloj2 = n
+    
     images[n].className += " active"
-    reloj2[n].className += " active"
+  
 }
 
-
-
-
-
-
-
 function next() {
-    activereloj2++
+    
     activeImg++
     if (activeImg > 2) {
         activeImg = 0
     }
-    if(activereloj2 > 2){
-        activereloj2 = 0
-    }
+   
     slider(activeImg)
-    slider(activereloj2)
+   
 }
 
 
@@ -90,27 +75,34 @@ function previus() {
     if (activeImg < 0) {
         activeImg = 2
     }
-    if(activereloj2 < 0){
-        activereloj2 = 2
-    }
+    
     slider(activeImg)
-    slider(activereloj2)
+    
 }
 
 
 // script de la navegacipon por tabs
-let tabs = Array.prototype.slice.apply(document.querySelectorAll('.tabs-item'))
-let panels = Array.prototype.slice.apply(document.querySelectorAll('.tab-panel'))
 
-document.getElementById('tabs').addEventListener('click', e => {
-    if (e.target.classList.contains('tabs-item')) {
-        let i = tabs.indexOf(e.target)
-        tabs.map(tab => tab.classList.remove('active-tab'))
-        tabs[i].classList.add('active-tab')
-        panels.map(panel => panel.classList.remove('active-panel'))
-        panels[i].classList.add('active-panel')
-    }
 
-})
+var thecontents=new Array()
 
+thecontents[0]='/static/img/dorado1515.jpg'
+
+thecontents[1]='/static/img/plateado1515.jpg'
+thecontents[2]='/static/img/negro1515.jpg'
+
+
+
+
+
+
+function changecontent(which){
+
+imagen.src = thecontents[document.ddmessage.selectbox.selectedIndex]
+document.ddmessage.contentbox.value= thecontents[document.ddmessage.selectbox.selectedIndex]
+
+
+
+
+}
 
