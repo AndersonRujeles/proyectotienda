@@ -7,22 +7,8 @@
         <div class="columns">
             <div class="column is-two-fifths-desktop">
                 <div class="slider" id="slider">
-                    <div class="slider-img-container">
-                        <img src="/static/img/dorado1302.jpg" alt="" id="1" class="active slider-item">
-                    </div>
-                    <div class="slider-img-container">
-                        <img src="/static/img/plateado1302.jpg" alt="" id="1"class="slider-item">
-                    </div>
-                    <div class="slider-img-container">
-                        <img src="/static/img/negro1302.jpg" alt="" id="1"class="slider-item">
-                    </div>
-                    <div class="slider-button-left slider-buttons" onclick="previus()">
-                        <i class="zmdi zmdi-chevron-left zmdi-hc-3x"></i>
-                    </div>
-                    <div class="slider-button-right slider-buttons" onclick="next()">
-                        <i class="zmdi zmdi-chevron-right zmdi-hc-3x"></i>
-                    </div>
-                </div>
+                    <img id="im" src="/static/img/dorado1302.jpg">
+          </div>
             </div>
             <div class="column">
                 <h3 class="is-size-4">Reloj Sport Hombre</h3>
@@ -36,10 +22,10 @@
                     <div class="columns is-multiline">
                         <div class="column is-one-third">
                             <label for="color">Color</label>
-                            <select class="form-control-field" id="color">
-                                <option value="#">Color 1</option>
-                                <option value="#">Color 2</option>
-                                <option value="#">Color 3</option>
+                            <select class="form-control-field" id="1" onChange="cambia(this.options[this.selectedIndex].value)">
+                                <option value="/static/img/dorado1302.jpg">Color 1</option>
+                                <option value="/static/img/plateado1302.jpg">Color 2</option>
+                                <option value="/static/img/negro1302.jpg">Color 3</option>
                             </select>
 
                         </div>
@@ -65,9 +51,8 @@
         <div class="columns">
             <div class="column is-two-fifths-desktop">
                 <div class="slider" id="slider">
-                   <img id="im" src="/static/img/dorado1515.jpg"> 
-                   
-                </div>
+                   <img id="im2" src="/static/img/dorado1515.jpg"> 
+            </div>
             </div>
             <div class="column">
                 <h3 class="is-size-4">Reloj Digital Hombre</h3>
@@ -82,16 +67,13 @@
                         <div class="column is-one-third">
                             <label for="color">Color</label>
                              <form name="ddmessage">
-                            <select class="form-control-field" onChange="cambia(this.options[this.selectedIndex].value)">
+                            <select class="form-control-field" id="2"onChange="cambia2(this.options[this.selectedIndex].value)">
                                 <option value="/static/img/dorado1515.jpg">Color 1</option>
                                 <option value="/static/img/plateado1515.jpg">Color 2</option>
                                 <option value="/static/img/negro1515.jpg">Color 3</option>
                             </select>
-                            
                             </form>
-
-                           <img name="imagen" src=""/>
-                        </div>
+                            </div>
                         <div class="column is-one-third">
                             <label for="quality">Cantidad</label>
                             <input class="form-control-field" type="number">

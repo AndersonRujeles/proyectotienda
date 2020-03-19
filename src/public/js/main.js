@@ -94,6 +94,9 @@ thecontents[2]='/static/img/negro1515.jpg'
 function cambia(src){
  document.getElementById("im").src=src
 }
+function cambia2(src){
+    document.getElementById("im2").src=src
+   }
 
 
 
