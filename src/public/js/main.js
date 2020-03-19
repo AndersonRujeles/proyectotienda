@@ -91,18 +91,11 @@ thecontents[0]='/static/img/dorado1515.jpg'
 thecontents[1]='/static/img/plateado1515.jpg'
 thecontents[2]='/static/img/negro1515.jpg'
 
-
-
-
-
-
-function changecontent(which){
-
-imagen.src = thecontents[document.ddmessage.selectbox.selectedIndex]
-document.ddmessage.contentbox.value= thecontents[document.ddmessage.selectbox.selectedIndex]
-
-
-
-
+function cambia(src){
+ document.getElementById("im").src=src
 }
+
+
+
+
 

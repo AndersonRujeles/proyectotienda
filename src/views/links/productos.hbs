@@ -65,15 +65,7 @@
         <div class="columns">
             <div class="column is-two-fifths-desktop">
                 <div class="slider" id="slider">
-                    <div class="slider-img-container">
-                        <img src="/static/img/dorado1515.jpg"  class="active reloj2">
-                    </div>
-                    <div class="slider-img-container">
-                        <img src="/static/img/plateado1515.jpg" class="reloj2">
-                    </div>
-                    <div class="slider-img-container">
-                        <img src="/static/img/negro1515.jpg" class="reloj2">
-                    </div>
+                   <img id="im" src="/static/img/dorado1515.jpg"> 
                    
                 </div>
             </div>
@@ -90,11 +82,12 @@
                         <div class="column is-one-third">
                             <label for="color">Color</label>
                              <form name="ddmessage">
-                            <select name="selectbox" class="form-control-field" onChange="changecontent(this)">
-                                <option selected>Color 1</option>
-                                <option>Color 2</option>
-                                <option>Color 3</option>
+                            <select class="form-control-field" onChange="cambia(this.options[this.selectedIndex].value)">
+                                <option value="/static/img/dorado1515.jpg">Color 1</option>
+                                <option value="/static/img/plateado1515.jpg">Color 2</option>
+                                <option value="/static/img/negro1515.jpg">Color 3</option>
                             </select>
+                            
                             </form>
 
                            <img name="imagen" src=""/>
