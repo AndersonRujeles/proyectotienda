@@ -417,7 +417,7 @@ footer {
     top: 0;
     bottom: 0;
     z-index: 100;
-    border: var(--border-dark-light);
+    border: var(--border-dark);
     background: #ffffff;
     transition: 0.5s;
     transform: translateX(-100%);
