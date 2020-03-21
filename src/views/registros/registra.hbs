@@ -5,31 +5,31 @@
             <div class="app-title">
                 <h1>Registrarse</h1>
             </div>
-
+           
             <div class="login-form">
-
+              <form action="/registro/registra" target="" method="post">
                 <div class="control-group">
-                <input type="text" class="login-field" value="" placeholder="Nombre" id="login-name">
+                <input type="text" class="login-field" value="" placeholder="Nombre" name="nombre">
                 <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
                 <div class="control-group">
-                <input type="text" class="login-field" value="" placeholder="Usuario" id="login-name">
+                <input type="text" class="login-field" value="" placeholder="Usuario" name="usuario">
                 <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
                 
                 <div class="control-group">
-                <input type="text" class="login-field" value="" placeholder="Correo" id="login-name">
+                <input  type="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" name="email" placeholder="Correo" id="correo">
                 <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
                 <div class="control-group">
-                <input type="password" class="login-field" value="" placeholder="Contraseña" id="login-pass">
+                <input type="password" class="login-field" value="" placeholder="Contraseña" name="contrasena">
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
                 </div>
 
-                <a class="btn2 btn-primary btn2-large btn2-block" href="#">Registrar</a>
-               
+                <input type="submit" class="btn2 btn-primary btn2-large btn2-block" value="Registrar" name="registrar"/>
+              
             </div>
         </div>
     </div>
