@@ -2,6 +2,8 @@ const express= require('express');
 const morgan= require('morgan');
 const exphbs= require('express-handlebars');
 const path= require('path');
+const flash=require('connect-flash');
+const session=require('express-session');
 //inicio
 const app= express();
 
@@ -21,9 +23,11 @@ app.set('view engine','.hbs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(flash());
 
 //variables globales
 app.use((req,res,next)=>{
+    app.locals.notifica=req.flash('notifica');
     next();
 });
 
