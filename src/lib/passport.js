@@ -46,4 +46,4 @@ done(null,user.idcliente);
 passport.deserializeUser(async(idcliente,done)=>{
  const rows= await pool.query(' SELECT * FROM registro where idcliente = ?',[idcliente]);
 done(null,rows[0]);
-})
+});

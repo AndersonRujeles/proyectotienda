@@ -1,12 +1,14 @@
     <header>
         <nav class="navbar-top">
             <ul class="navbar-top-ul">
+            
                 <li class="navbar-top-item">
                     <a href="/registros/registra"class="navbar-top-links">Registro</a>
                 </li>
                 <li class="navbar-top-item">
                     <a href="/iniciasesion/login" class="navbar-top-links">Iniciar sesión</a>
                 </li>
+                
                 {{#if user}}
                 <li class="navbar-top-item">
                     <a href="#" class="navbar-top-links">
@@ -41,7 +43,11 @@
                     {{/if}}
                     <li class="nav-menu-item"><a href="/registros/registra" class="nav-menu-link">Registro</a></li>
                     <li class="nav-menu-item"><a href="/iniciasesion/login" class="nav-menu-link">Iniciar Sesión</a></li>
-                
+                    {{#if user}}
+                   
+                    <li class="nav-menu-item"><a href="/cerrarsesion" class="nav-menu-link">Cerrar Sesión</a></li>
+                   
+                    {{/if}}
                 </ul>
             </nav>
         </nav>

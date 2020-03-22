@@ -20,10 +20,13 @@ router.get('/login',(req,res)=>{
 
 router.post('/login',(req,res,next)=>{
 passport.authenticate('local.inicio',{
-    successRedirect: '/admin',
+    successRedirect: '/index',
     failureRedirect: '/iniciasesion/login',
     failureFlash: true
 })(req,res,next);
 });
+
+
+
 
 module.exports=router;
