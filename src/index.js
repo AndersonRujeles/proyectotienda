@@ -7,9 +7,11 @@ const session=require('express-session');
 const mysqlsession=require('express-mysql-session');
 const{database} = require('./keys');
 const passport=require('passport');
+
 //inicio
 const app= express();
 require('./lib/passport');
+
 
 //configuraciones
 app.set('port',process.env.PORT || 4000);
@@ -39,7 +41,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 //variables globales
 app.use((req,res,next)=>{
-    app.locals.notifica=req.flash('notifica');
+    app.locals.success=req.flash('success');
+    app.locals.message=req.flash('message');
     next();
 });
 
@@ -49,7 +52,7 @@ app.use('/registros',require('./routes/authentication'));
 app.use('/links',require('./routes/links'));
 app.use(require('./routes/administrativos'));
 //app.use('/registros',require('./routes/registros'));
-//app.use('/iniciasesion',require('./routes/sesion'));
+app.use('/iniciasesion',require('./routes/authentication'));
 //public
 app.use('/static',express.static(path.join(__dirname,'public')));
 
