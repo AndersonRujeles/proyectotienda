@@ -11,8 +11,9 @@ passport.use('local.inicio',new LocalStrategy({
         const rows=await pool.query('SELECT * FROM registro WHERE username = ?', [username]);
         if(rows.length>0){
           const user=rows[0];
-          const validacion=await helpers.matchPassword(password,user.password);
           
+          const validacion=await helpers.matchPassword(password, user.password);
+         
           if(validacion){
               done(null,user,req.flash('success','Bienvenido'+user.username));
           }else{

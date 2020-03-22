@@ -8,9 +8,11 @@ const encriptado=await bcrypt.hash(password,salt);
 return encriptado;
 };
 
-helpers.matchPassword=async(password,savedpassword)=>{
+helpers.matchPassword= async (password,savedPassword) =>{
   try {
-    return await bcrypt.compare(password,savedpassword);
+    const salt= await bcrypt.genSalt(10);
+    savedPassword=await bcrypt.hash(password,salt);
+    return await bcrypt.compareSync(password,savedPassword);
     
   } catch (error) {
       console.log(error);
