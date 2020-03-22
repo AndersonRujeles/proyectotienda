@@ -4,6 +4,8 @@ const exphbs= require('express-handlebars');
 const path= require('path');
 const flash=require('connect-flash');
 const session=require('express-session');
+const mysqlsession=require('express-mysql-session');
+const{database} = require('./keys');
 //inicio
 const app= express();
 
@@ -20,10 +22,18 @@ app.engine('.hbs',exphbs({
 app.set('view engine','.hbs');
 
 //peticiones
+app.use(session({
+secret: 'faztmysqlnodesession',
+resave: false,
+saveUninitialized: false,
+store: new mysqlsession(database)
+
+}));
+app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-app.use(flash());
+
 
 //variables globales
 app.use((req,res,next)=>{

@@ -1,13 +1,12 @@
-<div class="banner banner-second">
-      
-    </div>
+<div class="banner banner-second">      
+</div>
 {{#each muestra}}
- <!-- reloj 1 -->
+ <!-- relojes -->
     <div class="container">
         <div class="columns">
             <div class="column is-two-fifths-desktop">
                 <div class="slider" id="slider">
-                    <img id="im" src="/static/img/dorado1302.jpg">
+                    <img id="im" src="/static/img/{{url1}}">
           </div>
             </div>
             <div class="column">
@@ -16,16 +15,15 @@
                 <h2 class="price is-size-4"><sup>$</sup>{{precio}}</h2>
                 <p class="has-text-grey"> <strong>Disponibilidad:</strong>{{estado}}</p>
                 <p class="has-text-grey"><strong>Código del producto: #</strong>{{idproducto}}</p>
-                <p class="text-default">skmei 1302 relojes de oro de acero inoxidable 
-                    sport reloj hombre relojes hombres muñeca</p>
+                <p class="text-default">pendiente</p>
                 <form action="#" class="form-control">
                     <div class="columns is-multiline">
                         <div class="column is-one-third">
                             <label for="color">Color</label>
-                            <select class="form-control-field" id="1" onChange="cambia(this.options[this.selectedIndex].value)">
-                                <option value="/static/img/dorado1302.jpg">Color 1</option>
-                                <option value="/static/img/plateado1302.jpg">Color 2</option>
-                                <option value="/static/img/negro1302.jpg">Color 3</option>
+                            <select class="form-control-field" id="{{idproducto}}" onChange="cambia(this.options[this.selectedIndex].value)">
+                                <option value="/static/img/{{url1}}">{{color1}}</option>
+                                <option value="/static/img/{{url2}}">{{color2}}</option>
+                                <option value="/static/img/{{url3}}">{{color3}}</option>
                             </select>
 
                         </div>
@@ -45,50 +43,7 @@
         </div>
     </div>
  
-<!-- reloj 2 -->
-<br>
- <div class="container">
-        <div class="columns">
-            <div class="column is-two-fifths-desktop">
-                <div class="slider" id="slider">
-                   <img id="im2" src="/static/img/dorado1515.jpg"> 
-            </div>
-            </div>
-            <div class="column">
-                <h3 class="is-size-4">Reloj Digital Hombre</h3>
-                
-                <h2 class="price is-size-4"><sup>$</sup>180.900</h2>
-                <p class="has-text-grey"> <strong>Disponibilidad:</strong> En stock</p>
-                <p class="has-text-grey"><strong>Código del producto: </strong>#1515</p>
-                <p class="text-default">2020 SKMEI 1515 Reloj digital 
-                    analógico de cuarzo de acero inoxidable de marca de lujo</p>
-                <form action="#" class="form-control">
-                    <div class="columns is-multiline">
-                        <div class="column is-one-third">
-                            <label for="color">Color</label>
-                             <form name="ddmessage">
-                            <select class="form-control-field" id="2"onChange="cambia2(this.options[this.selectedIndex].value)">
-                                <option value="/static/img/dorado1515.jpg">Color 1</option>
-                                <option value="/static/img/plateado1515.jpg">Color 2</option>
-                                <option value="/static/img/negro1515.jpg">Color 3</option>
-                            </select>
-                            </form>
-                            </div>
-                        <div class="column is-one-third">
-                            <label for="quality">Cantidad</label>
-                            <input class="form-control-field" type="number">
-                        </div>
-                        <div class="column is-full is-marginless">
-                            <button class="btn btn-default btn-outline"><i class="zmdi zmdi-shopping-cart"></i>
-                                Agregar al carrito</button>
-                        </div>
-                    </div>
 
-                </form>
-            </div>
-
-        </div>
-    </div>
     {{/each}}
 
     

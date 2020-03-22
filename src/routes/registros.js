@@ -13,7 +13,7 @@ router.post('/registra',async(req,res)=>{
    const {nombre,usuario,correo,contrasena}=req.body;
    const registrar={nombre,usuario,correo,contrasena};
    await pool.query('insert into registro set ?',[registrar]);
-   req.flash('notifica','Registro exitoso..')
+   
      res.redirect('../registros/registra');
     });
 

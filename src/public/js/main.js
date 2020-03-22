@@ -84,19 +84,10 @@ function previus() {
 // script de la navegacipon por tabs
 
 
-var thecontents=new Array()
-
-thecontents[0]='/static/img/dorado1515.jpg'
-
-thecontents[1]='/static/img/plateado1515.jpg'
-thecontents[2]='/static/img/negro1515.jpg'
-
 function cambia(src){
  document.getElementById("im").src=src
 }
-function cambia2(src){
-    document.getElementById("im2").src=src
-   }
+
 
 
 
