@@ -45,6 +45,7 @@ app.use((req,res,next)=>{
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/links',require('./routes/links'));
+app.use(require('./administrativo/administrativos'));
 app.use('/registros',require('./routes/registros'));
 app.use('/iniciasesion',require('./routes/sesion'));
 //public
