@@ -51,8 +51,10 @@ app.use((req,res,next)=>{
 app.use(require('./routes'));
 app.use('/registros',require('./routes/authentication'));
 app.use('/links',require('./routes/links'));
+app.use(require('./routes/cerrar'));
 app.use(require('./routes/administrativos'));
 app.use('/iniciasesion',require('./routes/authentication'));
+
 
 
 //public

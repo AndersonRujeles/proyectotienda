@@ -29,4 +29,5 @@ passport.authenticate('local.inicio',{
 
 
 
+
 module.exports=router;
