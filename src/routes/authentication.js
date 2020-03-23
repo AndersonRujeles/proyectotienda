@@ -8,13 +8,15 @@ router.get('/registra',noestalogueado,(req,res)=>{
   
 });
 
-router.post('/registra',passport.authenticate('local.registra',{
+router.post('/registra',(req,res,next)=>{
+passport.authenticate('local.registra',{
     successRedirect: '/iniciasesion/login',
     failureRedirect: '/registra',
     failureFlash: true
-}));
+})(req,res,next);
+});
       
-router.get('/login',noestalogueado,(req,res)=>{
+router.get('/login',(req,res)=>{
         res.render('iniciasesion/login');
 });
 
@@ -25,9 +27,6 @@ passport.authenticate('local.inicio',{
     failureFlash: true
 })(req,res,next);
 });
-
-
-
 
 
 module.exports=router;

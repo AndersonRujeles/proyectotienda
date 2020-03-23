@@ -10,27 +10,27 @@
                
               <form action="" target="" method="post">
                 <div class="control-group">
-                <input type="text" class="login-field" value="" placeholder="Nombre" name="nombre" autofocus>
+                <input type="text" class="login-field" value="" required placeholder="Nombre" name="nombre"  autofocus >
                 <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
                 <div class="control-group">
-                <input type="text" class="login-field" value="" placeholder="Usuario" name="username">
+                <input type="text" class="login-field" value="" placeholder="Usuario" required name="username">
                 <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
                 
                 <div class="control-group">
-                <input  type="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" name="correo" placeholder="Correo">
+                <input  type="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required name="correo" placeholder="Correo">
                 <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
                 <div class="control-group">
-                <input type="password" class="login-field" value="" placeholder="Contraseña" name="password">
+                <input type="password" class="login-field" value="" placeholder="Contraseña" required name="password">
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
                 </div>
                
                 
-              <button class="btn2 btn-primary btn2-large btn2-block" onclick="alert('Registro exitoso')">
+              <button class="btn2 btn-primary btn2-large btn2-block" >
                Registrar
               </button>
                   

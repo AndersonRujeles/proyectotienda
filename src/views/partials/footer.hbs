@@ -20,9 +20,12 @@
                             <h3 class="has-text-weight-bold">Tu cuenta</h3>
                             
                         </li>
-                      
+                      {{#if user}}
+                      {{else}}
                         <li class="footer-item"><a class="footer-link" href="/iniciasesion/login">Iniciar sesión</a></li>
                         <li class="footer-item"><a class="footer-link" href="/registros/registra">Registro</a></li>
+                       
+                        {{/if}}
                         {{#if user}}
                         <li class="footer-item"><a class="footer-link" href="#">Ver carrito </a></li>
                         {{/if}}
