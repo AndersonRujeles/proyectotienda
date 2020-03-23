@@ -1,8 +1,8 @@
 const express = require('express');
 const router= express.Router();
 const passport=require('passport');
- 
-router.get('/registra',(req,res)=>{
+const {noestalogueado}=require('../lib/valida');
+router.get('/registra',noestalogueado,(req,res)=>{
   
    res.render('registros/registra');
   
@@ -14,7 +14,7 @@ router.post('/registra',passport.authenticate('local.registra',{
     failureFlash: true
 }));
       
-router.get('/login',(req,res)=>{
+router.get('/login',noestalogueado,(req,res)=>{
         res.render('iniciasesion/login');
 });
 

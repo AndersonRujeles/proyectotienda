@@ -7,7 +7,7 @@ passport.use('local.inicio',new LocalStrategy({
     usernameField: 'username',
     passwordField: 'password',
     passReqToCallback: true
-        },async(req,username,password,done) => {
+        },async(req,res,username,password,done) => {
         const rows=await pool.query('SELECT * FROM registro WHERE username = ?', [username]);
         if(rows.length>0){
           const user=rows[0];
