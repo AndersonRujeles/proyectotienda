@@ -54,6 +54,7 @@ app.use('/links',require('./routes/links'));
 app.use(require('./routes/cerrar'));
 app.use(require('./routes/administrativos'));
 app.use('/iniciasesion',require('./routes/authentication'));
+app.use(require('./routes/agrega'));
 
 
 

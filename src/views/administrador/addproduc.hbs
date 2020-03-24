@@ -1,12 +1,14 @@
-   <script  src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
- 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 <div class="banner banner-second">      
 </div>
 <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link" href="/add">Agregar Productos</a>
+    <a class="nav-link" href="/agrega">Agregar Productos</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Listar Productos</a>
@@ -36,27 +38,48 @@
                 </div>
                 
                 <div class="control-group">
-                <input  type="text"  required name="precio" placeholder="Precio">
+                <input  type="numeric"  required name="precio" placeholder="Precio">
                 <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
                
                 <div class="control-group">
-                <input  type="text"  required name="url1" placeholder="url imagen1">
-                <label class="login-field-icon fui-user" for="login-name"></label>
-                </div>
-              
-                <select class="selectpicker form-control"  multiple="multiple" data-max-options="3" data-width="75%">
-                <option>Mustard</option>
-                <option>Ketchup</option>
-                <option>Relish</option>
-                </select>
-                 
+                <input type="file" name="url1" accept=".jpg,.png" class="form-control-file border">
                 
+                </div>
+           
+           
+            <div class="control-group">
+            
+            <select class="selectpicker form-control" multiple  required id='testbox' name="color">
+            <option selected value="Negro">Negro</option>
+            <option value="Plateado">Plateado</option>
+            <option value="Dorado">Dorado</option>
+            <option value="Rosado">Rosado</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Azul">Azul</option>
+            </select>
+        
+             <script type="text/javascript">
+              $(document).ready(function() {
+               var last_valid_selection = null;
+               $('#testbox').change(function(event) {
+               if ($(this).val().length > 3) {
+                alert('Solo debes seleccionar maximo 3 colores');
+               $(this).val(last_valid_selection);
+               } else {
+                last_valid_selection = $(this).val();
+        }
+      });
+    });
+               </script>
+              </div>
+                 
+                <div class="control-group">
               <button class="btn2 btn-primary btn2-large btn2-block" >
-               Registrar
+               Guardar
               </button>
-                  
+                  </div>
             </div>
         </div>
     </div>
