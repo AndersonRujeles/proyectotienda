@@ -8,5 +8,10 @@ router.get('/listarp',async(req,res)=>{
 
 });
 
+router.get('/listarusers',async(req,res)=>{
+    const muestrausers=await pool.query('select * from registro');
+    res.render('administrador/listausers',{muestrausers});
+
+});
 
    module.exports=router;

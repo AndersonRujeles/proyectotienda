@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<div class="banner banner-second">      
+<div class="banner banner-three">      
 </div>
 <ul class="nav">
   <li class="nav-item">
@@ -17,29 +17,26 @@
 
       <div class="col-xs-6">
 <table class="table">
-  <h1>Productos</h1>
+  <h1>Usuarios</h1>
   <thead>
     <tr>
-      <th scope="col">id</th>
+      <th scope="col">idcliente</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Descripcion</th>
-      <th scope="col">Color</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Url</th>
-    </tr>
+      <th scope="col">Usuario</th>
+      <th scope="col">Correo</th>
+      </tr>
   </thead>
   <tbody>
-      {{#each muestra}}
+      {{#each muestrausers}}
     <tr>
-      <th scope="row">{{idproducto}}</th>
+      <th scope="row">{{idcliente}}</th>
       <td> {{nombre}}</td>
-      <td>  {{descripcion}}</td>
-      <td> {{color}}</td>
-       <td> {{precio}}</td>
-        <td> {{url1}}</td>
+      <td>  {{username}}</td>
+      <td> {{correo}}</td>
+       
         <td>
-		  <a href="index/modificar/{{idproducto}}" class="btn btn-info">Modificar</a>
-        <a href="delete/{{idproducto}}" class="btn btn-danger">Eliminar</a>
+		  <a href="index/modificar/{{idcliente}}" class="btn btn-info">Modificar</a>
+        <a href="delete/{{idcliente}}" class="btn btn-danger">Eliminar</a>
         </td>
  </tr>
 
