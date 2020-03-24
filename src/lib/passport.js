@@ -14,7 +14,7 @@ passport.use('local.inicio',new LocalStrategy({
           const validacion=await helpers.matchPassword(password, user.password);
          
           if(validacion){
-              done(null,user,req.flash('success','Bienvenido'+user.username));
+            done(null,user,req.flash('success','Bienvenido'));
           }else{
               done(null,false,req.flash('message','Contraseña Incorrecta'));
           }
@@ -34,6 +34,7 @@ passReqToCallback: true
     registrar.password = await helpers.encryptPassword(password);
     const result=await pool.query('insert into registro set ?',[registrar]);
     registrar.idcliente=result.insertId;
+    
     return done(null,registrar);
 }));
 

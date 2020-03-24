@@ -8,6 +8,7 @@ const mysqlsession=require('express-mysql-session');
 const{database} = require('./keys');
 const passport=require('passport');
 
+
 //inicio
 const app= express();
 require('./lib/passport');
@@ -55,6 +56,7 @@ app.use(require('./routes/cerrar'));
 app.use(require('./routes/administrativos'));
 app.use('/iniciasesion',require('./routes/authentication'));
 app.use(require('./routes/agrega'));
+app.use(require('./routes/listarp'));
 
 
 
