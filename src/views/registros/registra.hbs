@@ -34,7 +34,13 @@
                Registrar
               </button>
              
-              <script src="/src/public/js/valor.js">
+              <script>
+                $(document).ready(function(){
+                  $('#obtenerdato').click(()=>{
+                   alertify.minimalDialog("Minimal button-less dialog.");
+                    return false;
+                  }
+                });
                   /*
                    $(document).ready(function(){
                      $('#obtenerdato').click(()=>{
@@ -50,7 +56,7 @@
                      });
                    });
                 
-                
+                /*
                 function obtenerdato(){
                   $.ajax(
                     type:'GET',
