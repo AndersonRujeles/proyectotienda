@@ -4,20 +4,22 @@
                {{#if user}}
                {{else}}
                 <li class="navbar-top-item">
-                    <a href="/registros/registra"class="navbar-top-links">Registro</a>
+                    <a href="/registros/registra"class="navbar-top-links" >Registro</a>
                 </li>
                 <li class="navbar-top-item">
                     <a href="/iniciasesion/login" class="navbar-top-links">Iniciar sesión</a>
                 </li>
                  {{/if}}
+            
                 {{#if user}}
                 <li class="navbar-top-item">
                     <a href="#" class="navbar-top-links">
-                        <i class="zmdi zmdi-shopping-cart"></i> Carrito
+                        <i class="zmdi zmdi-shopping-cart" ></i> Carrito
+                        
                         <!-- <i class="zmdi zmdi-chevron-down"></i> -->
                     </a>
                 </li>
-                {{/if}}
+               {{/if}} 
             </ul>
         </nav>
         <nav class="navbar">

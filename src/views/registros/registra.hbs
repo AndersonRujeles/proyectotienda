@@ -10,7 +10,7 @@
                
               <form action="" target="" method="post">
                 <div class="control-group">
-                <input type="text" class="login-field" value="" required placeholder="Nombre" name="nombre"  autofocus >
+                <input type="text" class="login-field" value="" required placeholder="Nombre" name="nombre" id="nombre"  autofocus >
                 <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
@@ -30,10 +30,41 @@
                 </div>
                
                 
-              <button class="btn2 btn-primary btn2-large btn2-block" >
+              <button class="btn2 btn-primary btn2-large btn2-block" onclick="obtenerdato()">
                Registrar
               </button>
-                  
+             
+              <script src="/src/public/js/valor.js">
+                  /*
+                   $(document).ready(function(){
+                     $('#obtenerdato').click(()=>{
+                        alertify.minimalDialog || alertify.dialog('minimalDialog',function(){
+                      return {
+                      main:function(content){
+                      this.setContent(content); 
+                       }
+                     };
+                   }); 
+                        alertify.minimalDialog("Minimal button-less dialog.");
+                }
+                     });
+                   });
+                
+                
+                function obtenerdato(){
+                  $.ajax(
+                    type:'GET',
+                    dataType:'json',
+                    success:(result)=>{
+                        //si el usario se registra me envia  el dato de registro significa  que el registro fue exitoso y sale msj
+                       alertify.success('Se registro correctamente' ,result);
+                      
+                    }
+                  })
+                }
+                /*
+              </script>
+         
             </div>
         </div>
     </div>

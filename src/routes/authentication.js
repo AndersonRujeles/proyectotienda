@@ -9,13 +9,14 @@ router.get('/registra',noestalogueado,(req,res)=>{
   
 });
 
-router.post('/registra',noestalogueado,
+router.post('/registra',(req,res,next)=>{
 passport.authenticate('local.registra',{
-    successRedirect: '/iniciasesion/login',
+    successRedirect: '/registros/registra', 
     failureRedirect: '/registra',
-    failureFlash: true
-})
-);
+    failureFlash: true,
+    
+})(req,res,next);
+});
       
 router.get('/login',(req,res)=>{
         res.render('iniciasesion/login');
