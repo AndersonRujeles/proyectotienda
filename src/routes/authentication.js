@@ -2,6 +2,8 @@ const express = require('express');
 const router= express.Router();
 const passport=require('passport');
 const {noestalogueado}=require('../lib/valida');
+const {validacion}=require('../lib/valor');
+
 
 router.get('/registra',noestalogueado,(req,res)=>{
    
@@ -11,7 +13,7 @@ router.get('/registra',noestalogueado,(req,res)=>{
 
 router.post('/registra',(req,res,next)=>{
 passport.authenticate('local.registra',{
-    successRedirect: '/registros/registra', 
+    successRedirect: '/iniciasesion/login', 
     failureRedirect: '/registra',
     failureFlash: true,
     
