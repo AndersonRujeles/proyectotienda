@@ -7,7 +7,7 @@ const {validacion}=require('../lib/valor');
 
 router.get('/registra',noestalogueado,(req,res)=>{
    
-   res.render('registros/registra');
+   res.render('registros/registra',{success:''});
   
 });
 
