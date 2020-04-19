@@ -2,7 +2,7 @@ const express = require('express');
 const router= express.Router();
 const passport=require('passport');
 const {noestalogueado}=require('../lib/valida');
-const {validacion}=require('../lib/valor');
+
 
 
 router.get('/registra',noestalogueado,(req,res)=>{
