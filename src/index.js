@@ -58,6 +58,7 @@ app.use(require('./routes/administrativos'));
 app.use('/iniciasesion',require('./routes/authentication'));
 app.use(require('./routes/agrega'));
 app.use(require('./routes/listarp'));
+app.use(require('./routes/listaru'));
 
 
 

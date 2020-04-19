@@ -8,9 +8,10 @@ router.get('/agrega',(req,res)=>{
 
 
 router.post('/agrega',async(req,res)=>{
-   const {nombre,descripcion,precio,url1,color}=req.body;
-   const agregar={nombre,descripcion,precio,url1,color};
+   const {nombre,descripcion,precio,url1}=req.body;
+   const agregar={nombre,descripcion,precio,url1};
    const result=await pool.query('insert into producto set ?',[agregar]);
-   console.log("guardado exitoso");
+   req.flash('success','Producto agregado exitosamente');
+   res.redirect('../agrega');
 });
 module.exports=router;

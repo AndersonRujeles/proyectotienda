@@ -1,15 +1,23 @@
-
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
 <div class="banner banner-three">
 </div>
-´{{#if success}}
-<div class="alert alert-success">
-  <strong>Success!</strong> {{success}}
-</div>
-{{/if}}
-<div class="login">
+ 
+              {{#if success}}
+                <div class="container p-4">
+                 <div class="row">
+                      <div class="col-md-4 mx-auto">
+              <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+              {{success}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+           </div>
+         </div>
+      </div>
+      {{/if}}
         <div class="login-screen">
             <div class="app-title">
                 <h1>Registrarse</h1>
@@ -39,46 +47,24 @@
                 </div>
                
                 
-              <button class="btn2 btn-primary btn2-large btn2-block" onclick="obtenerdato()">
+              <button class="btn2 btn-primary btn2-large btn2-block" id="obtenerdato">
                Registrar
               </button>
              
               <script>
                 $(document).ready(function(){
-                  $('#obtenerdato').click(()=>{
+                  $('#obtenerdato').click(function(){
                    alertify.minimalDialog("Minimal button-less dialog.");
-                    return false;
-                  }
-                });
-                  /*
-                   $(document).ready(function(){
-                     $('#obtenerdato').click(()=>{
-                        alertify.minimalDialog || alertify.dialog('minimalDialog',function(){
-                      return {
-                      main:function(content){
-                      this.setContent(content); 
-                       }
-                     };
-                   }); 
-                        alertify.minimalDialog("Minimal button-less dialog.");
-                }
-                     });
-                   });
-                
-                /*
-                function obtenerdato(){
-                  $.ajax(
-                    type:'GET',
-                    dataType:'json',
-                    success:(result)=>{
-                        //si el usario se registra me envia  el dato de registro significa  que el registro fue exitoso y sale msj
-                       alertify.success('Se registro correctamente' ,result);
-                      
-                    }
-                  })
-                }
-                /*
-              </script>
+                    
+                  });
+                })
+                 </script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+               
+                 
+              
          
             </div>
         </div>

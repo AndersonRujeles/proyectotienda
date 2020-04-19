@@ -7,17 +7,16 @@ const {validacion}=require('../lib/valor');
 
 router.get('/registra',noestalogueado,(req,res)=>{
    
-   res.render('registros/registra',{success:''});
+   res.render('registros/registra');
   
 });
 
 router.post('/registra',(req,res,next)=>{
 passport.authenticate('local.registra',{
-    successRedirect: '/iniciasesion/login', 
-    failureRedirect: '/registra',
-    failureFlash: true,
-    
+     failureFlash: true,
 })(req,res,next);
+req.flash('success','Usuario regitrado exitosamente')
+res.redirect('../registros/registra');
 });
       
 router.get('/login',(req,res)=>{

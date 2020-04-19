@@ -35,7 +35,7 @@ passReqToCallback: true
     registrar.password = await helpers.encryptPassword(password);
     const result=await pool.query('insert into registro set ?',[registrar]);
     registrar.idcliente=result.insertId;
-    return done(null,registrar);
+     return done(null,registrar);
 }));
 
 passport.serializeUser((user,done)=>{

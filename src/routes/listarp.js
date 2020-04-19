@@ -8,10 +8,13 @@ router.get('/listarp',async(req,res)=>{
 
 });
 
-router.get('/listarusers',async(req,res)=>{
-    const muestrausers=await pool.query('select * from registro');
-    res.render('administrador/listausers',{muestrausers});
+router.get('/delete/:idproducto',async(req,res)=>{
+    const {idproducto}=req.params;
+    await pool.query('delete from producto where idproducto = ?',[idproducto]);
+    res.redirect('../listarp');
+
 
 });
+
 
    module.exports=router;
