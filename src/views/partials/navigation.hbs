@@ -49,9 +49,23 @@
                     <li class="nav-menu-item"><a href="/iniciasesion/login" class="nav-menu-link">Iniciar Sesión</a></li>
                    {{/if}}
                     {{#if user}}
-                   
-                    <li class="nav-menu-item"><a href="/cerrarsesion" class="nav-menu-link">Cerrar Sesión</a></li>
-                   
+
+                   <li class="nav-menu-item" id="men">
+                        <a class="nav-menu-link link-submenu">Usuario<i
+                                class="zmdi zmdi-chevron-down"></i></a>
+                        <div class="container-sub-menu">
+                            <ul class="sub-menu-ul">
+                                    
+                                        <li class="nav-menu-item"><a class="nav-menu-link" href="/links/productos">Hacer una compra</a></li>
+                                        <li class="nav-menu-item"><a class="nav-menu-link" href="#">Carrito de compras</a>
+                                        </li>
+                                        <li class="nav-menu-item"><a class="nav-menu-link" href="/cerrarsesion">Cerrar sesion</a></li>
+                                      
+                                </li>
+                                </ul>
+                          
+      
+                                    
                     {{/if}}
                 </ul>
             </nav>

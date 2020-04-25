@@ -501,6 +501,7 @@ footer {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.3s ease;
+   
 }
 
 .active {
@@ -645,7 +646,7 @@ footer {
     }
 
     .nav-menu-item:hover > .container-sub-menu {
-        width: 400px;
+        width: 250px;
         background: var(--dark-lighten);
         padding: 1rem;
         position: absolute;

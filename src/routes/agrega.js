@@ -14,4 +14,5 @@ router.post('/agrega',async(req,res)=>{
    req.flash('success','Producto agregado exitosamente');
    res.redirect('../agrega');
 });
+
 module.exports=router;
