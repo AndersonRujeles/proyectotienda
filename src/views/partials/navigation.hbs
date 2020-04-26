@@ -16,7 +16,7 @@
                     <a href="#" class="navbar-top-links">
                         <i class="zmdi zmdi-shopping-cart" ></i> Carrito
                         
-                        <!-- <i class="zmdi zmdi-chevron-down"></i> -->
+                        
                     </a>
                 </li>
                {{/if}} 
@@ -36,8 +36,15 @@
                        
                         <img src="/static/img/logo.png">
                     </div>
-                </form>
-
+                </form>     
+            
+                {{#if c}}
+            <li class="nav-menu-item"><a href="/index" class="nav-menu-link">HOLAAA</a></li>
+                      {{#if cliente}}
+                      <li class="nav-menu-item"><a href="/index" class="nav-menu-link">PERRA</a></li>
+                       {{/if}}
+                 {{/if}}
+            
                 <a class="is-hidden-mobile brand is-uppercase has-text-weight-bold has-text-dark" href="/index">TuReloj</a>
                 <ul class="nav-menu-ul">
                   <li class="nav-menu-item"><a href="/index" class="nav-menu-link">La Marca</a></li>
@@ -52,7 +59,7 @@
 
                    <li class="nav-menu-item" id="men">
                         <a class="nav-menu-link link-submenu">{{user.username}}<i
-                                class="zmdi zmdi-chevron-down"></i></a>
+                        class="zmdi zmdi-chevron-down"></i></a>
                         <div class="container-sub-menu">
                             <ul class="sub-menu-ul">
                                
