@@ -8,6 +8,14 @@ router.get('/productos',estalogueado,async(req,res)=>{
    res.render('links/productos',{muestra});
 });
 
+router.post('/productos',estalogueado,async(req,res)=>{
+   const {cantidad,precio}=req.body;
+   const carrito={cantidad,precio};
+   await pool.query('insert into venta set ?',[carrito]);
+   req.flash('success','Producto agregado correctamente')
+   res.redirect('../links/productos');
+   
+});
 
 
 

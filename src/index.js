@@ -60,6 +60,7 @@ app.use(require('./routes/agrega'));
 app.use(require('./routes/listarp'));
 app.use(require('./routes/listaru'));
 app.use(require('./routes/agregaruser'));
+app.use(require('./routes/sesion'));
 
 
 

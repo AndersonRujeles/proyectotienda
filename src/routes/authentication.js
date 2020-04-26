@@ -25,7 +25,7 @@ router.get('/login',(req,res)=>{
 
 router.post('/login',noestalogueado,(req,res,next)=>{
 passport.authenticate('local.inicio',{
-    successRedirect: '/index',
+    successRedirect: '/sesion',
     failureRedirect: '/iniciasesion/login',
     failureFlash: true
 })(req,res,next);

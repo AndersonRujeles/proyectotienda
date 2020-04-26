@@ -585,7 +585,9 @@ footer {
     .navbar-top-links {
         color: #ffffff;
     }
-
+    .navbar-top-links2 {
+        color: #000000;
+    }
     .navbar-top-links:hover {
         color: var(--primary);
     }
@@ -646,7 +648,7 @@ footer {
     }
 
     .nav-menu-item:hover > .container-sub-menu {
-        width: 250px;
+        width: 235px;
         background: var(--dark-lighten);
         padding: 1rem;
         position: absolute;
