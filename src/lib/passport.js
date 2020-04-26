@@ -8,19 +8,17 @@ passport.use('local.inicio',new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true
         },async(req,username,password,done) => {
-            const rows=await pool.query('SELECT *  FROM registro WHERE username = ?', [username]);
-            if(rows.length>0){
+          const rows=await pool.query('SELECT *  FROM registro WHERE username = ?', [username]);
+          if(rows.length>0){
           const user=rows[0];
           const validacion=await helpers.matchPassword(password, user.password);
           
           if(validacion){
                  if(user.roles_idroles == 1){
-                    const c = user.roles_idroles;
                      done(null,user,c,req.flash('success','Bienvenido'));
-                 
-                   }if(user.roles_idroles==2){
-                      const cliente = user.roles_idroles;
-                    done(null,user,cliente,req.flash('success','Bienvenido'));
+                    
+                 }else{
+                    done(null,user,req.flash('success','Bienvenido'));
                   }
           }else{
               done(null,false,req.flash('message','Contraseña Incorrecta'));
@@ -44,22 +42,14 @@ passReqToCallback: true
      return done(null,registrar);
 }));
 
-passport.use('local.registro',new LocalStrategy({
-    usernameField: 'username',
-    passwordField: 'password',
-    passReqToCallback: true
-    }, async(req,username,password,done) => {
-        const {nombre,correo,roles_idroles}=req.body;
-        const registrar={nombre,username,correo,password,roles_idroles};
-        registrar.password = await helpers.encryptPassword(password);
-        const result=await pool.query('insert into registro set ?',[registrar]);
-        registrar.idcliente=result.insertId;
-         return done(null,registrar);
-    }));
 
 passport.serializeUser((user,done)=>{
-done(null,user.idcliente);
-
+    if(user.roles_idroles == 1){
+              
+        done(null,user.idcliente,user.roles_idroles);
+    }else{
+        done(null,user.idcliente);
+    }
 });
 
 passport.deserializeUser(async(idcliente,done)=>{

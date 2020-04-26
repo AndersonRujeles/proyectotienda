@@ -617,7 +617,7 @@ footer {
     }
 
     .nav-menu-item {
-        border-top: 0;
+        border-top: 2;
         position: relative;
     }
 
@@ -655,11 +655,11 @@ footer {
         top: 56px;
         display: flex;
         flex-wrap: wrap;
-        -moz-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5);
+        -moz-box-shadow: 1px 6px 18px rgba(0, 0, 0, 0.5);
         /*FF 3.5+*/
-        -webkit-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5);
+        -webkit-box-shadow: 1px 6px 18px rgba(0, 0, 0, 0.5);
         /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-        box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5);
+        box-shadow: 1px 6px 18px rgba(0, 0, 0, 0.5);
         /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
         height: auto;
     }
