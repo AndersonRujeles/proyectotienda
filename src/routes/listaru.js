@@ -9,8 +9,8 @@ router.get('/listaru',async(req,res)=>{
 });
 
 router.get('/delete/:idcliente',async(req,res)=>{
-    const {idproducto}=req.params;
-    await pool.query('delete from producto where idcliente = ?',[idproducto]);
+    const {idcliente}=req.params;
+    await pool.query('delete from registro where idcliente = ?',[idcliente]);
     res.redirect('../listaru');
 
 

@@ -19,7 +19,7 @@ req.flash('success','Usuario regitrado exitosamente')
 res.redirect('../registros/registra');
 });
       
-router.get('/login',(req,res)=>{
+router.get('/login',noestalogueado,(req,res)=>{
         res.render('iniciasesion/login');
 });
 
@@ -28,7 +28,7 @@ passport.authenticate('local.inicio',{
     successRedirect: '/sesion',
     failureRedirect: '/iniciasesion/login',
     failureFlash: true
-})
+})(req,res,next);
 });
 
 

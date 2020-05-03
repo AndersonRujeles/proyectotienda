@@ -14,15 +14,17 @@ passport.use('local.inicio',new LocalStrategy({
           const validacion=await helpers.matchPassword(password, user.password);
           
           if(validacion){
-        
-            done(null,user,req.flash('success','Bienvenido'));
+                 if(user.roles_idroles == 1){
+                     done(null,user,req.flash('success','Bienvenido'));
                     
-                
+                 }else{
+                    done(null,user,req.flash('success','Bienvenido'));
+                  }
           }else{
               done(null,false,req.flash('message','Contraseña Incorrecta'));
           }
         }else{
-             done(null,false,req.flash('message','Usuario no existe'));
+            return done(null,false,req.flash('message','Usuario no existe'));
         }
     }));
 
