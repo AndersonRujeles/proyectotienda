@@ -28,9 +28,7 @@ passport.authenticate('local.inicio',{
     successRedirect: '/sesion',
     failureRedirect: '/iniciasesion/login',
     failureFlash: true
-})(req,res,next);
-
-
+})
 });
 
 
