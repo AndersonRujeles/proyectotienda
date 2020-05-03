@@ -2,8 +2,8 @@
 </div>
 {{#each muestra}}
  <!-- relojes -->
- <form action="" target="" method="post">
-    <div class="container">
+ 
+         <div class="container">
         <div class="columns">
             <div class="column is-two-fifths-desktop">
                 <div class="slider" id="slider">
@@ -33,12 +33,13 @@
                             <input class="form-control-field" type="number" name="cantidad">
                         </div>
                         <div class="column is-full is-marginless">
-                            <button class="btn btn-default btn-outline"><i class="zmdi zmdi-shopping-cart"></i>
-                                Agregar al carrito</button>
+                            <a href="agregar/{{idproducto}}/{{nombre}}/{{precio}}" class="btn btn-default btn-outline"><i class="zmdi zmdi-shopping-cart"></i>
+                                Agregar al carrito</a>
+                                
                         </div>
                     </div>
 
-                </form>
+              
             </div>
 
         </div>
