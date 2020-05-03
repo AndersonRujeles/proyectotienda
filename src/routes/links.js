@@ -8,10 +8,10 @@ router.get('/productos',estalogueado,async(req,res)=>{
    res.render('links/productos',{muestra});
 });
 
-router.get('/agregar/:idproducto/:nombre/:precio',estalogueado,async(req,res)=>{
-   const {idproducto,nombre,precio}=req.params;
-   const carrito={idproducto,nombre,precio};
-   const result=await pool.query('insert into carrito set ?',[carrito]);
+router.get('/agregar/:idproducto',estalogueado,async(req,res)=>{
+   const {idproducto}=req.params;
+   const consulta=await pool.query('select idproducto,nombre,precio from producto where idproducto = ?',[idproducto]);
+   const result=await pool.query('insert idproducto,nombre,precio into carrito set ?',[consulta]);
    req.flash('success','Producto agregado correctamente')
    res.redirect('../links/productos');
   
