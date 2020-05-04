@@ -29,7 +29,7 @@ app.set('view engine','.hbs');
 
 //peticiones
 app.use(session({
-secret: 'faztmysqlnodesession',
+secret: 'turelojsession',
 resave: false,
 saveUninitialized: false,
 store: new mysqlsession(database)

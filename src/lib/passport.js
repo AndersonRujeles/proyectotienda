@@ -15,7 +15,8 @@ passport.use('local.inicio',new LocalStrategy({
           
           if(validacion){
                  if(user.roles_idroles == 1){
-                     done(null,user,req.flash('success','Bienvenido'));
+                     const admin=true;
+                     done(null,user,admin,req.flash('success','Bienvenido'));
                     
                  }else{
                     done(null,user,req.flash('success','Bienvenido'));
@@ -43,10 +44,10 @@ passReqToCallback: true
 }));
 
 
-passport.serializeUser((user,done)=>{
+passport.serializeUser(async(user,done)=>{
     if(user.roles_idroles == 1){
               
-        done(null,user.idcliente,user.roles_idroles);
+        done(null,user.idcliente);
     }else{
         done(null,user.idcliente);
     }
