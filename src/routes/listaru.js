@@ -16,5 +16,21 @@ router.get('/delete/:idcliente',async(req,res)=>{
 
 });
 
+router.get('/modificar_usuario/:idcliente',async(req,res)=>{
+    const {idcliente}=req.params;
+    const usuario_id =await pool.query('select * from registro where idcliente = ?',[idcliente]);
+    res.render('administrador/modificaruser',{usuario_id});
+});
+
+router.post('/modificar_usuario/:idcliente',async(req,res)=>{
+    const {idcliente}=req.params;
+    const {nombre,username,correo}=req.body;
+    const actualizausuario={nombre,username,correo};
+    await pool.query('update registro set ? where idcliente = ?',[actualizausuario,idcliente]);
+    res.redirect('../listaru');
+});
+
+
+
 
    module.exports=router;
