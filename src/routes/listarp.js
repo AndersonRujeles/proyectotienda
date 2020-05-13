@@ -14,11 +14,12 @@ router.get('/delete/:idproducto',async(req,res)=>{
     res.redirect('../listarp');
 });
 
-router.get('/modificar_producto/:idproducto',async(req,res)=>{
+/*router.get('/modificar_producto/:idproducto',async(req,res)=>{
     const {idproducto}=req.params;
     const producto_id =await pool.query('select * from producto where idproducto = ?',[idproducto]);
     res.render('administrador/modificarproduc',{producto_id});
 });
+*/
 
 router.post('/modificar_producto/:idproducto',async(req,res)=>{
     const {idproducto}=req.params;
