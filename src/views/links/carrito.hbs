@@ -1,0 +1,37 @@
+<div class="banner banner-second">      
+</div>
+
+<div class="container">
+
+      <table class="table table-hover">
+      <h1>Carrito de Compras</h1>
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Producto</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio</th>
+      </tr>
+  </thead>
+  <tbody>
+      {{#each muestra}}
+       
+    <tr>
+      <td>{{nombre}}</td>
+      <td>{{cantidad}}</td>
+      <td>{{precio}}</td>
+    </tr>
+  </tbody>
+  {{/each}}
+  <tbody>
+          
+    <tr>
+    
+      <td><b>Total</b></td>
+      <td>{{cant}}</td>
+      
+      <td></td>
+    </tr>
+  </tbody>
+      </table>
+</div>
+
