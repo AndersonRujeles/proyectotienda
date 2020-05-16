@@ -1,7 +1,22 @@
 <div class="banner banner-second">      
 </div>
+{{#if success}}
+                <div class="container p-4">
+                 <div class="row">
+                      <div class="col-md-4 mx-auto">
+              <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+              {{success}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+           </div>
+         </div>
+      </div>
+      {{/if}}
 {{#each muestra}}
  <!-- relojes -->
+ <form action="productos/{{idproducto}}/{{nombre}}/{{precio}}" method="post">
  
          <div class="container">
         <div class="columns">
@@ -11,13 +26,13 @@
               </div>
          </div>
             <div class="column">
-                <h3 class="is-size-4" name="nombre">{{nombre}}</h3>
-                <h2 class="price is-size-4" name="precio"><sup>$</sup>{{precio}}</h2>
-                <p class="has-text-grey" name="idproducto"><strong>Código del producto: #</strong>{{idproducto}}</p>
+                <h3 class="is-size-4" name="nombre" value="{{nombre}}">{{nombre}}</h3>
+                <h2 class="price is-size-4" name="precio" value="{{precio}}"><sup>$</sup>{{precio}}</h2>
+                <p class="has-text-grey" name="idproducto" value="{{idproducto}}"><strong>Código del producto: #</strong>{{idproducto}}</p>
                 <p class="text-default"name="descripcion">{{descripcion}}</p>
                 
                     <div class="columns is-multiline">
-<!-- 
+                       <!-- 
                         <div class="column is-one-third">
                             <label for="color">Color</label>
                             <select class="form-control-field" id="{{idproducto}}" onChange="cambia(this.options[this.selectedIndex].value)">
@@ -27,14 +42,14 @@
                             </select>
 
                         </div>
--->
+                            -->
                         <div class="column is-one-third">
                             <label for="quality">Cantidad</label>
-                            <input class="form-control-field" type="number" name="cantidad">
+                            <input class="form-control-field" type="number" name="cantidad" >
                         </div>
                         <div class="column is-full is-marginless">
-                            <a href="agregar/{{idproducto}}" class="btn btn-default btn-outline"><i class="zmdi zmdi-shopping-cart"></i>
-                                Agregar al carrito</a>
+                            <button type="submit" class="btn btn-default btn-outline"><i class="zmdi zmdi-shopping-cart"></i>
+                                Agregar al carrito</button>
                                 
                         </div>
                     </div>
@@ -44,7 +59,7 @@
 
         </div>
     </div>
- 
+ </form>
 
     {{/each}}
 

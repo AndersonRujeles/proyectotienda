@@ -23,7 +23,6 @@ router.post('/delete/:idproducto',async(req,res)=>{
 
 router.post('/modificar_producto/:idproducto',async(req,res)=>{
     const {idproducto}=req.params;
-    console.log(idproducto);
     const {nombre,descripcion,precio}=req.body;
     const actualizaproduc={nombre,descripcion,precio};
     const productoact=await pool.query('UPDATE producto set ? where idproducto = ?',[req.body,idproducto]);
