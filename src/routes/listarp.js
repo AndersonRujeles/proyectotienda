@@ -8,7 +8,7 @@ router.get('/listarp',async(req,res)=>{
 
 });
 
-router.get('/delete/:idproducto',async(req,res)=>{
+router.post('/delete/:idproducto',async(req,res)=>{
     const {idproducto}=req.params;
     await pool.query('delete from producto where idproducto = ?',[idproducto]);
     res.redirect('../listarp');

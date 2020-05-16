@@ -8,20 +8,18 @@ router.get('/listaru',async(req,res)=>{
 
 });
 
-router.get('/delete/:idcliente',async(req,res)=>{
+router.post('/delete-usuario/:idcliente',async(req,res)=>{
     const {idcliente}=req.params;
     await pool.query('delete from registro where idcliente = ?',[idcliente]);
     res.redirect('../listaru');
-
-
 });
-
+/*
 router.get('/modificar_usuario/:idcliente',async(req,res)=>{
     const {idcliente}=req.params;
     const usuario_id =await pool.query('select * from registro where idcliente = ?',[idcliente]);
     res.render('administrador/modificaruser',{usuario_id});
 });
-
+*/
 router.post('/modificar_usuario/:idcliente',async(req,res)=>{
     const {idcliente}=req.params;
     const {nombre,username,correo}=req.body;
