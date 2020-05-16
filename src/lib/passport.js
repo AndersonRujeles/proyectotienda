@@ -43,6 +43,18 @@ passReqToCallback: true
      return done(null,registrar);
 }));
 
+passport.use('local.registro',new LocalStrategy({
+    usernameField: 'username',
+    passwordField: 'password',
+    passReqToCallback: true
+    }, async(req,username,password,done) => {
+        const {nombre,correo,roles_idroles}=req.body;
+        const registrar={nombre,username,correo,password,roles_idroles};
+        registrar.password = await helpers.encryptPassword(password);
+        const result=await pool.query('insert into registro set ?',[registrar]);
+        registrar.idcliente=result.insertId;
+         return done(null,registrar);
+    }));
 
 passport.serializeUser(async(user,done)=>{
     if(user.roles_idroles == 1){
