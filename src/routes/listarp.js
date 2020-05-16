@@ -23,9 +23,10 @@ router.get('/delete/:idproducto',async(req,res)=>{
 
 router.post('/modificar_producto/:idproducto',async(req,res)=>{
     const {idproducto}=req.params;
-    const {nombre,descripcion,precio,url1}=req.body;
-    const actualizaproduc={nombre,descripcion,precio,url1};
-    await pool.query('update producto set ? where idproducto = ?',[actualizaproduc,idproducto]);
+    console.log(idproducto);
+    const {nombre,descripcion,precio}=req.body;
+    const actualizaproduc={nombre,descripcion,precio};
+    const productoact=await pool.query('UPDATE producto set ? where idproducto = ?',[req.body,idproducto]);
     res.redirect('../listarp');
 });
 

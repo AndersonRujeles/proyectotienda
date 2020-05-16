@@ -26,7 +26,7 @@ router.post('/modificar_usuario/:idcliente',async(req,res)=>{
     const {idcliente}=req.params;
     const {nombre,username,correo}=req.body;
     const actualizausuario={nombre,username,correo};
-    await pool.query('update registro set ? where idcliente = ?',[actualizausuario,idcliente]);
+    await pool.query('update registro set ? where idcliente = ?',[req.body,idcliente]);
     res.redirect('../listaru');
 });
 

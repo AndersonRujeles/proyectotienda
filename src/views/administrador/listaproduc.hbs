@@ -47,7 +47,7 @@
        <!-- Modal -->
 <div class="modal fade" id="modificarProducto{{idproducto}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form action="/modificar_producto/{{idproducto}}" target="" method="post">
+    <form action="/modificar_producto/{{idproducto}}" method="post">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
@@ -62,7 +62,7 @@
         <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
             </div>
             <input type="text" class="form-control" 
-              aria-label="Sizing example input" value="{{nombre}}" name="nombre" aria-describedby="inputGroup-sizing-sm">
+              aria-label="Sizing example input" name="nombre" value="{{nombre}}" aria-describedby="inputGroup-sizing-sm">
             </div>              
 
 
@@ -71,7 +71,7 @@
                 <span class="input-group-text" id="inputGroup-sizing-sm">Descripcion</span>
                </div>
             <input type="text" class="form-control" 
-              aria-label="Sizing example input" value="{{descripcion}}" name="descripcion" aria-describedby="inputGroup-sizing-sm">
+              aria-label="Sizing example input" name="descripcion" value="{{descripcion}}" aria-describedby="inputGroup-sizing-sm">
             </div>      
          
             <div class="input-group input-group-sm mb-3">
@@ -79,7 +79,7 @@
                 <span class="input-group-text" id="inputGroup-sizing-sm">Precio</span>
                </div>
             <input type="text" class="form-control" 
-              aria-label="Sizing example input" value="{{precio}}" name="precio" aria-describedby="inputGroup-sizing-sm">
+              aria-label="Sizing example input" name="precio" value="{{precio}}" aria-describedby="inputGroup-sizing-sm">
             </div> 
              
             <div class="input-group mb-3">
@@ -87,11 +87,11 @@
                 <span class="input-group-text" id="inputGroupFileAddon01">Imagen</span>
              </div>
              <div class="custom-file">
-               <input type="file" class="custom-file-input" id="inputGroupFile01" name="url1" aria-describedby="inputGroupFileAddon01">
-               <label class="custom-file-label" for="inputGroupFile01">{{url1}}</label>
+               <input type="file" class="custom-file-input" id="inputGroupFile01" name="url1" value="{{url1}}" aria-describedby="inputGroupFileAddon01">
+               <label class="custom-file-label" for="inputGroupFile01"></label>
             </div>
            </div>
-
+            
 
          </div>
       <div class="modal-footer">
@@ -101,6 +101,7 @@
     </div>
   </div>
 </div>
+</form>
        <a href="delete/{{idproducto}}" class="btn btn-danger">Eliminar</a>
       </td>
       </tr>
