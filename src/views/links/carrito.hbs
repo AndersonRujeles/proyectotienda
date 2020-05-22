@@ -23,8 +23,8 @@
       <td>{{nombre}}</td>
       <td>{{cantidad}}</td>
       <td>{{precio}}</td>
-      <td></td>
-    <td> 
+      <td>{{totales}}</td>
+      <td> 
                <!-- Modal Eliminar-->
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#eliminarProducto{{idcarrito}}">
        Eliminar
@@ -55,21 +55,19 @@
        </div>
 </div>
 </form>
-
-
-
     </td>
     </tr>
   </tbody>
   {{/each}}
+  
   <tbody>
           
     <tr>
     
       <td><b>Total</b></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><b>{{cantidad}}</b></td>
+      <td><b>{{precioUnidad}}</b></td>
+      <td><b>{{totalCompra}}</b></td>
       <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#eliminarProducto{{idcarrito}}">
        Comprar
       </button></td>

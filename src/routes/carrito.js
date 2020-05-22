@@ -2,14 +2,20 @@ const express = require('express');
 const router= express.Router();
 const pool=require('../database');
 const {estalogueado}=require('../lib/valida');
-
+const formatterPeso = new Intl.NumberFormat('es-CO', {
+   style: 'currency',
+   currency: 'COP',
+   minimumFractionDigits: 0
+ })
 
 router.get('/carrito',estalogueado,async(req,res)=>{
-    const muestra=await pool.query('select * from carrito');
-    const cant=await pool.query('select incremento(cantidad) from carrito');
-    const convertir=JSON.stringify(cant);
-    console.log(cant); 
-    res.render('links/carrito',{muestra});
+    const muestra=await pool.query('select idcarrito,nombre,cantidad,precio,precio*cantidad as totales from carrito');
+    const consultaCantidad=await pool.query('select sum(cantidad) as cantProducto,sum(precio) as precioProducto from carrito');
+    const consultaTotal=await pool.query('select sum(precio*cantidad) as total from carrito');
+    const cantidad=consultaCantidad[0].cantProducto;
+    const precioUnidad=formatterPeso.format(consultaCantidad[0].precioProducto);
+    const totalCompra=formatterPeso.format(consultaTotal[0].total);
+    res.render('links/carrito',{muestra,cantidad,precioUnidad,totalCompra});
     
  });
 
