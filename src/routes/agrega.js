@@ -1,7 +1,7 @@
 const express = require('express');
 const router= express.Router();
 const pool=require('../database');
-
+const {estalogueado}=require('../lib/valida');
 
 router.get('/agrega',(req,res)=>{
     res.render('administrador/addproduc');

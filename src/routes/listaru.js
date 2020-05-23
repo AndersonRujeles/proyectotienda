@@ -1,14 +1,15 @@
 const express = require('express');
 const router= express.Router();
 const pool=require('../database');
+const {estalogueado}=require('../lib/valida');
 
-router.get('/listaru',async(req,res)=>{
+router.get('/listaru',estalogueado,async(req,res)=>{
     const muestrausers=await pool.query('select * from registro');
     res.render('administrador/listausers',{muestrausers});
 
 });
 
-router.post('/delete-usuario/:idcliente',async(req,res)=>{
+router.post('/delete-usuario/:idcliente',estalogueado,async(req,res)=>{
     const {idcliente}=req.params;
     await pool.query('delete from registro where idcliente = ?',[idcliente]);
     req.flash('success','Usuario eliminado correctamente');
@@ -21,7 +22,7 @@ router.get('/modificar_usuario/:idcliente',async(req,res)=>{
     res.render('administrador/modificaruser',{usuario_id});
 });
 */
-router.post('/modificar_usuario/:idcliente',async(req,res)=>{
+router.post('/modificar_usuario/:idcliente',estalogueado,async(req,res)=>{
     const {idcliente}=req.params;
     const {nombre,username,correo}=req.body;
     const actualizausuario={nombre,username,correo};

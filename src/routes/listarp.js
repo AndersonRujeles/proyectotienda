@@ -1,14 +1,15 @@
 const express = require('express');
 const router= express.Router();
 const pool=require('../database');
+const {estalogueado}=require('../lib/valida');
 
-router.get('/listarp',async(req,res)=>{
+router.get('/listarp',estalogueado,async(req,res)=>{
     const muestra=await pool.query('select * from producto');
     res.render('administrador/listaproduc',{muestra});
 
 });
 
-router.post('/delete/:idproducto',async(req,res)=>{
+router.post('/delete/:idproducto',estalogueado,async(req,res)=>{
     const {idproducto}=req.params;
     await pool.query('delete from producto where idproducto = ?',[idproducto]);
     req.flash('success','Producto eliminado correctamente');
@@ -22,7 +23,7 @@ router.post('/delete/:idproducto',async(req,res)=>{
 });
 */
 
-router.post('/modificar_producto/:idproducto',async(req,res)=>{
+router.post('/modificar_producto/:idproducto',estalogueado,async(req,res)=>{
     const {idproducto}=req.params;
     const {nombre,descripcion,precio}=req.body;
     const actualizaproduc={nombre,descripcion,precio};
