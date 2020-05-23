@@ -11,6 +11,7 @@ router.get('/listaru',async(req,res)=>{
 router.post('/delete-usuario/:idcliente',async(req,res)=>{
     const {idcliente}=req.params;
     await pool.query('delete from registro where idcliente = ?',[idcliente]);
+    req.flash('success','Usuario eliminado correctamente');
     res.redirect('../listaru');
 });
 /*
@@ -25,6 +26,7 @@ router.post('/modificar_usuario/:idcliente',async(req,res)=>{
     const {nombre,username,correo}=req.body;
     const actualizausuario={nombre,username,correo};
     await pool.query('update registro set ? where idcliente = ?',[req.body,idcliente]);
+    req.flash('success','Usuario actualizado correctamente');
     res.redirect('../listaru');
 });
 

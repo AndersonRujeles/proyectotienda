@@ -11,6 +11,7 @@ router.get('/listarp',async(req,res)=>{
 router.post('/delete/:idproducto',async(req,res)=>{
     const {idproducto}=req.params;
     await pool.query('delete from producto where idproducto = ?',[idproducto]);
+    req.flash('success','Producto eliminado correctamente');
     res.redirect('../listarp');
 });
 
@@ -26,6 +27,7 @@ router.post('/modificar_producto/:idproducto',async(req,res)=>{
     const {nombre,descripcion,precio}=req.body;
     const actualizaproduc={nombre,descripcion,precio};
     const productoact=await pool.query('UPDATE producto set ? where idproducto = ?',[req.body,idproducto]);
+    req.flash('success','Producto actualizado correctamente');
     res.redirect('../listarp');
 });
 
