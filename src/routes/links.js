@@ -13,9 +13,9 @@ router.get('/productos',estalogueado,async(req,res)=>{
 router.post('/productos/:idproducto/:nombre/:precio',estalogueado,async(req,res)=>{
    const {idproducto,nombre,precio}=req.params;
    const {cantidad}=req.body;
-   const NewCarro ={idproducto,nombre,precio,cantidad};
+   const NewCarro ={idproducto,nombre,precio,cantidad,idcliente:req.user.idcliente};
    const result=await pool.query('insert into carrito set ?',[NewCarro]);
-   req.flash('success','Producto agregado al carrito')
+   req.flash('success','Producto agregado al carrito');
    res.redirect('../../../productos');
   
 });

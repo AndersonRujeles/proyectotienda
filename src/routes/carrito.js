@@ -9,9 +9,9 @@ const formatterPeso = new Intl.NumberFormat('es-CO', {
  })
 
 router.get('/carrito',estalogueado,async(req,res)=>{
-    const muestra=await pool.query('select idcarrito,nombre,cantidad,precio,precio*cantidad as totales from carrito');
-    const consultaCantidad=await pool.query('select sum(cantidad) as cantProducto,sum(precio) as precioProducto from carrito');
-    const consultaTotal=await pool.query('select sum(precio*cantidad) as total from carrito');
+    const muestra=await pool.query('select idcarrito,nombre,cantidad,precio,precio*cantidad as totales from carrito where idcliente = ?',[req.user.idcliente]);
+    const consultaCantidad=await pool.query('select sum(cantidad) as cantProducto,sum(precio) as precioProducto from carrito where idcliente = ?',[req.user.idcliente]);
+    const consultaTotal=await pool.query('select sum(precio*cantidad) as total from carrito where idcliente = ?',[req.user.idcliente]);
     const cantidad=consultaCantidad[0].cantProducto;
     const precioUnidad=formatterPeso.format(consultaCantidad[0].precioProducto);
     const totalCompra=formatterPeso.format(consultaTotal[0].total);
