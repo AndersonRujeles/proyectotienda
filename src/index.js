@@ -62,6 +62,7 @@ app.use(require('./routes/listaru'));
 app.use(require('./routes/agregaruser'));
 app.use(require('./routes/sesion'));
 app.use(require('./routes/carrito'));
+app.use(require('./routes/compras'));
 
 
 
